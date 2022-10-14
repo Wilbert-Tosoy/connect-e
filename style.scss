@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+// Variables
+$primary-color: #3292E6;
+$primary-color-light: #09EAFE;
+$font-weights: (
+    "medium" : 500,
+    "semi-bold": 600
+);
+
+@mixin flex($flex-direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', san-serif;
+
+    header {
+        @include flex(row, space-between, inherit);
+
+        #logo-container {
+            margin: 0 1rem;
+
+            img {
+                width: 150px;
+                height: 130px;
+                display: inline-block;
+            }
+        }
+
+        #nav-bar {
+            #link-list {
+                list-style-type: none;
+
+                .item {
+                    margin: 2rem 0;
+                    font-weight: 500;
+                    display: block;
+                    cursor: pointer;
+
+                    a.links {
+                        text-decoration: none;
+                        color: black;
+                    }
+
+                    a.links:active {
+                        color: white;
+                    }
+                }
+            }
+
+            #nav-close {
+                cursor: pointer;
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+
+
+                img {
+                    width: 20px;
+                    display: block;
+                }
+            }
+        }
+
+        #nav-menu {
+            cursor: pointer;
+            margin: 1.5rem 1.5rem;
+
+            img {
+                width: 20px;
+                display: block;
+            }
+        }
+    }
+
+    main {
+
+        margin-top: 1rem;
+        border-top: 5px solid $primary-color;
+        padding: .5rem 0;
+
+        #home {
+            #main-showcase-image {
+                img {
+                    height: 50vh;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #nav-bar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80vw;
+        height: 100vh;
+        background: linear-gradient($primary-color, $primary-color-light);
+        border-radius: 1rem 0 0 1rem;
+        box-shadow: -5px 0 4px hsl(152, 24%, 15%, .1);
+        padding: 4rem 0 0 3rem;
+        transition: .3s;
+        z-index: 100;
+    }
+}
+
+#nav-bar.active {
+    right: 0;
+}

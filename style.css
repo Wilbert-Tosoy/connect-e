@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", san-serif;
+}
+body header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: inherit;
+}
+body header #logo-container {
+  margin: 0 1rem;
+}
+body header #logo-container img {
+  width: 150px;
+  height: 130px;
+  display: inline-block;
+}
+body header #nav-bar #link-list {
+  list-style-type: none;
+}
+body header #nav-bar #link-list .item {
+  margin: 2rem 0;
+  font-weight: 500;
+  display: block;
+  cursor: pointer;
+}
+body header #nav-bar #link-list .item a.links {
+  text-decoration: none;
+  color: black;
+}
+body header #nav-bar #link-list .item a.links:active {
+  color: white;
+}
+body header #nav-bar #nav-close {
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+body header #nav-bar #nav-close img {
+  width: 20px;
+  display: block;
+}
+body header #nav-menu {
+  cursor: pointer;
+  margin: 1.5rem 1.5rem;
+}
+body header #nav-menu img {
+  width: 20px;
+  display: block;
+}
+body main {
+  margin-top: 1rem;
+  border-top: 5px solid #3292E6;
+  padding: 0.5rem 0;
+}
+body main #home #main-showcase-image img {
+  height: 50vh;
+  width: auto;
+}
+
+@media screen and (max-width: 768px) {
+  #nav-bar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80vw;
+    height: 100vh;
+    background: linear-gradient(#3292E6, #09EAFE);
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: -5px 0 4px hsla(152deg, 24%, 15%, 0.1);
+    padding: 4rem 0 0 3rem;
+    transition: 0.3s;
+    z-index: 100;
+  }
+}
+#nav-bar.active {
+  right: 0;
+}/*# sourceMappingURL=style.css.map */
